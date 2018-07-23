@@ -1,6 +1,6 @@
 {
   "name": "ogbot",
-  "version": "3.1.0",
+  "version": "6.6.6",
   "description": "BOT",
   "main": "bot.js",
   "scripts": {
