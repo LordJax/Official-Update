@@ -201,6 +201,7 @@ let commandfile = client.commands.get(cmd.slice(prefix.length))
             
         }
         if(cmd === `${prefix}stats`){
+	    let TotalShards = client.shard.totalShards;
             let bicon = client.user.displayAvatarURL;
 	    const duration = moment.duration(client.uptime).format(" D [Days], H [Hours], m [minutes], s [Seconds]");
             let statsEmbed = new Discord.RichEmbed()
@@ -209,6 +210,7 @@ let commandfile = client.commands.get(cmd.slice(prefix.length))
             .addField(`❯ Mem Usage`,  `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`)
             .addField("❯ Servers", `${client.guilds.size}`)
             .addField(`❯ Owner`, `OfficialGaming#0196`)
+	    .addField(`❯ Shard,` `client.shard.id | ${TotalShards}`)
             .addField("❯ Users", `${client.users.size}`)
             .addField("❯ Channels", `${client.channels.size}`)
             .addField("❯ Uptime", duration)
