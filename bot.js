@@ -92,6 +92,15 @@ const youtube = new Youtube(yt_api_key);
 
 
 client.on('ready', () => {
+    if (client.shard.id == 0)
+        console.log(`-- ${moment().utc().format('MMMM Do')}, ${moment().utc().format('hh:mm a')} --`);
+
+ 
+});
+
+
+
+client.on('ready', () => {
 	console.log(logSymbols.success,`${client.user.username} logged in successfully OGBot Plugin, Version: ${version}`.bold.red); //console.log(logSymbols.success, 'Finished successfully!');
 	console.log(colors.red.underline.bold('--------------------------'));
 	console.log(colors.cyan.bold(`Loaded in with ${client.guilds.size} Guilds`));
